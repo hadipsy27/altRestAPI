@@ -2,26 +2,25 @@ package com.rest.api.Entity;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@Table(name = "posts")
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-public class Post {
+@AllArgsConstructor
+@Table(name = "pruducts")
+public class Product {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
-    private String title;
+    private String name;
 
     @NotNull
-    private String description;
+    private String price;
 }
